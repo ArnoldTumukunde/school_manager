@@ -100,10 +100,10 @@ pub async fn delete_parent(db: Data<MongoRepo>, path: Path<String>) -> HttpRespo
 }
 
 #[get("/parents")]
-pub async fn get_all_users(db: Data<MongoRepo>) -> HttpResponse {
-    let users = db.get_all_parents().await;
-    match users {
-        Ok(users) => HttpResponse::Ok().json(users),
+pub async fn get_all_parents(db: Data<MongoRepo>) -> HttpResponse {
+    let parents = db.get_all_parents().await;
+    match parents {
+        Ok(parent) => HttpResponse::Ok().json(parent),
         Err(err) => HttpResponse::InternalServerError().body(err.to_string()),
     }
 }
