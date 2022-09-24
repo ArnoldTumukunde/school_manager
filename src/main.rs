@@ -3,7 +3,7 @@ mod models;
 mod repository;
 
 use actix_web::{web::Data, App, HttpServer};
-use api::parents_api::{create_parent, delete_parent, get_parent, update_parent};
+use api::{parents_api::*, students_api::*, teachers_api::*};
 use repository::mongodb_repo::MongoRepo;
 
 #[actix_web::main]
@@ -17,8 +17,16 @@ async fn main() -> std::io::Result<()> {
             .service(get_parent)
             .service(update_parent)
             .service(delete_parent)
+            .service(create_student)
+            .service(get_student)
+            .service(update_student)
+            .service(delete_student)
+            .service(create_teacher)
+            .service(get_teacher)
+            .service(update_teacher)
+            .service(delete_teacher)
     })
-    .bind(("localhost", 8000))?
+    .bind(("127.0.0.1", 8080))?
     .run()
     .await
 }

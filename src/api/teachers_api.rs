@@ -28,7 +28,7 @@ pub async fn create_teacher(db: Data<MongoRepo>, new_teacher: Json<Teacher>) -> 
 }
 
 #[get("/teacher/{id}")]
-pub async fn get_parent(db: Data<MongoRepo>, path: Path<String>) -> HttpResponse {
+pub async fn get_teacher(db: Data<MongoRepo>, path: Path<String>) -> HttpResponse {
     let id = path.into_inner();
     if id.is_empty() {
         return HttpResponse::BadRequest().body("invalid ID");

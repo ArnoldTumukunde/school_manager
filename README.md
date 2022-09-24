@@ -1,1 +1,1 @@
-A simple school management system built with actix and yew.
+A simple school management system built with actix and yew. It's still a work in progress, don't use in production.
