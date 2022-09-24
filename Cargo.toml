@@ -1,0 +1,25 @@
+[package]
+name = "school-manager"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "4"
+uuid = { version = "1.1.2", features = ["v4"]}
+serde = "1.0.136"
+dotenv = "0.15.0"
+futures = "0.3"
+env_logger = "0.9"
+log = "0.4"
+chrono = "0.4.22"
+strum = { version = "0.24", features = ["derive"]}
+strum_macros = "0.24"
+derive_more = "0.99"
+
+[dependencies.mongodb]
+version = "2.2.0"
+default-features = false
+features = ["async-std-runtime"]
+

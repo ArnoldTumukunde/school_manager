@@ -1,0 +1,11 @@
+mod attendance;
+mod classroom;
+mod classroom_student;
+mod course;
+mod exam;
+mod exam_result;
+mod exam_type;
+mod grade;
+pub mod parent;
+pub mod student;
+pub mod teacher;
