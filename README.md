@@ -1,0 +1,1 @@
+A simple school management system built with actix and yew.
